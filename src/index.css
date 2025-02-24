@@ -94,3 +94,10 @@ button {
 .remove-icon {
     background-color: var(--color-red);
 }
+
+.list-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.7rem;
+}
