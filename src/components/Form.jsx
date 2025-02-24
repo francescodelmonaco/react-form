@@ -10,22 +10,31 @@ const Form = () => {
     ]);
     const [title, setTitle] = useState("");
 
+    // funzione per aggiungere un articolo tramite form
     const addArticle = (e) => {
         e.preventDefault();
         setArticles([...articles, title]);
     };
 
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     alert("Articolo aggiunto!");
-    // };
+    // funzione per eliminare articolo nella lista
+    const removeArticle = (indexArticle) => {
+        const arrayClone = articles.filter((_, index) => index !== indexArticle);
+        return setArticles(arrayClone);
+    };
 
     return (
         <>
             <ul className="margin-60">
                 {
                     articles.map((article, index) => (
-                        <li key={index}>{article}</li>
+                        <>
+                            <div className="list-row">
+                                <li key={index}>{article}</li>
+                                <button className="remove-icon" onClick={() => removeArticle(index)}>
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </>
                     ))
                 }
             </ul>
