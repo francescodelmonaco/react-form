@@ -14,6 +14,7 @@ const Main = () => {
     const addArticle = (e) => {
         e.preventDefault();
         setArticles([...articles, title]);
+        setTitle("");
     };
 
     // funzione per eliminare articolo nella lista
